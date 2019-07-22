@@ -41,7 +41,6 @@ def get_bigram_probs(sentences, V, start_idx, end_idx, smoothing=1):
   return bigram_probs
 
 
-
 if __name__ == '__main__':
   # load in the data
   # note: sentences are already converted to sequences of word indexes

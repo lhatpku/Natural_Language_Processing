@@ -87,7 +87,7 @@ def get_sentences_with_word2idx_limit_vocab(n_vocab=2000, keep_words=KEEP_WORDS)
   idx_new_idx_map = {}
   for idx, count in sorted_word_idx_count[:n_vocab]:
     word = idx2word[idx]
-    print(word, count)
+    # print(word, count)
     word2idx_small[word] = new_idx
     idx_new_idx_map[idx] = new_idx
     new_idx += 1
@@ -106,6 +106,8 @@ def get_sentences_with_word2idx_limit_vocab(n_vocab=2000, keep_words=KEEP_WORDS)
     if len(sentence) > 1:
       new_sentence = [idx_new_idx_map[idx] if idx in idx_new_idx_map else unknown for idx in sentence]
       sentences_small.append(new_sentence)
+
+#   print(sentences_small)
 
   return sentences_small, word2idx_small
 
